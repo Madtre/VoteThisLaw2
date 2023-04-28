@@ -17,14 +17,20 @@ messages:
    # Lorsqu'un joueurs n'a pas les permissions.
    no-perms: "&cVous n'avez pas les permissions."
    
-   # Lorsqu'un joueurs vote pour.
+   # Lorsqu'un joueur vote pour.
    vote-yes: "&aVotre vote a bien été enregistré. Vous avez voté pour."
    
-   # Lorsqu'un joueurs vote contre.
+   # Lorsqu'un joueur vote contre.
    vote-no: "&aVotre vote a bien été enregistré. Vous avez voté contre."
+   
+   # Lorsqu'un joueur vote sagesse
+   vote-sagesse: "&aVotre vote a bien été enregistré. Vous avez voté sagesse."
    
    # Lorsqu'un joueurs veut revoter.
    already-vote: "&cVous avez déjà voté."
+   
+   # Afficher le choix des votes.
+   votechoices: "&aVous avez le choix entre voter pour (/vote pour), voter contre (/vote contre), ou vous abstenir/blanc (/vote sagesse)"
    
    # Lorsque la loi a été accepté.
    law-accepted: "&aLa loi a été adopté par l'Assemblé."
