@@ -163,6 +163,7 @@ public class VoteTheLaw extends JavaPlugin {
 									if (vote_no.contains(player)) {
 										vote_no.remove(player);
 									}
+									Bukkit.getServer().broadcastMessage(cs("&a"+player.getName()+" a voté"));
 								}
 							} else {
 								player.sendMessage(cs(msgconf.getString("messages.no-vote")));
@@ -172,7 +173,7 @@ public class VoteTheLaw extends JavaPlugin {
 						}
 					}
 
-					if (args[0].equalsIgnoreCase("contre")) {
+					else if (args[0].equalsIgnoreCase("contre")) {
 						if (player.hasPermission("vote.vote")) {
 							if (vote == true) {
 								if (vote_no.contains(player)) {
@@ -183,6 +184,7 @@ public class VoteTheLaw extends JavaPlugin {
 									if (vote_yes.contains(player)) {
 										vote_yes.remove(player);
 									}
+									Bukkit.getServer().broadcastMessage(cs("&a"+player.getName()+" a voté"));
 								}
 							} else {
 								player.sendMessage(cs(msgconf.getString("messages.no-vote")));
@@ -191,12 +193,36 @@ public class VoteTheLaw extends JavaPlugin {
 							player.sendMessage(cs(msgconf.getString("messages.no-perms")));
 						}
 					}
-
+					else if (args[0].equalsIgnoreCase("sagesse")) {
+						if (player.hasPermission("vote.vote")) {
+							if (vote == true) {
+								if (vote_no.contains(player)) {
+									vote_no.remove(player);
+									player.sendMessage(cs(msgconf.getString("messages.vote-sagesse")));
+									Bukkit.getServer().broadcastMessage(cs("&a"+player.getName()+" a voté"));
+								} else if(vote_yes.contains(player)) {
+									vote_yes.remove(player);
+									player.sendMessage(cs(msgconf.getString("messages.vote-sagesse")));
+									Bukkit.getServer().broadcastMessage(cs("&a"+player.getName()+" a voté"));
+								} else {
+									player.sendMessage(cs(msgconf.getString("messages.vote-sagesse")));
+									Bukkit.getServer().broadcastMessage(cs("&a"+player.getName()+" a voté"));
+								}
+							} else {
+								player.sendMessage(cs(msgconf.getString("messages.no-vote")));
+							}
+						} else {
+							player.sendMessage(cs(msgconf.getString("messages.no-perms")));
+						}	
+					} else {
+						player.sendMessage(cs(msgconf.getString("messages.votechoices")))
+					}
+					
 					// SETUP (mise en place des buttons personnalisé.
 
-					if (args[0].equalsIgnoreCase("setup")) {
+					/*if (args[0].equalsIgnoreCase("setup")) {
 
-					}
+					}*/
 				}
 
 			}
